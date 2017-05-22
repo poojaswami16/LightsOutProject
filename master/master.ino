@@ -17,10 +17,8 @@ void setup() {
 }
 
 void loop() {
-  saySomething("red");
-  saySomething("help");
-  saySomething("bloop");
-  saySomething("noodle noodle noodle");
+  saySomething("blue");
+  saySomething("white");
   
 }
 
