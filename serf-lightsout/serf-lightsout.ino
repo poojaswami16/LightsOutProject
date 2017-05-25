@@ -51,3 +51,8 @@ void turnOff(int numButton) {
     strip.setPixelColor(numButton, 255, 255, 255);
   }
 }
+
+void flip() {
+  turnOn;
+  turnOff;
+}
