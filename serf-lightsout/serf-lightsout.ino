@@ -30,4 +30,19 @@ void loop() {
   delay(100);
 }
 
+void receiveEvent(int howMany) {
+  myWord = "";
+  while (0 < Wire.available()) { // loop through all but the last
+    char c = Wire.read(); // receive byte as a character
+    myWord = myWord + c;
+  }
+  Serial.println("hello");
+  Serial.println(myWord);
+
+
+void turnOn(int numButton) {
+  if (myWord == "blue") {
+    strip.setPixelColor (numButton, 0, 0, 255)
+  }
+}
 
