@@ -46,3 +46,8 @@ void turnOn(int numButton) {
   }
 }
 
+void turnOff(int numButton) {
+  if (myWord == "white") {
+    strip.setPixelColor(numButton, 255, 255, 255);
+  }
+}
