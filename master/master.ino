@@ -19,6 +19,7 @@ void setup() {
 void loop() {
   saySomething("blue");
   saySomething("white");
+  saySomething("random");
   
 }
 
