@@ -39,10 +39,16 @@ void receiveEvent(int howMany) {
   Serial.println("hello");
   Serial.println(myWord);
 
+if (myWord == "random") {
+  strip.setPixelColor(0, 255, 255, 255);
+  strip.setPixelColor(1, 0, 0, 255);
+  strip.setPixelColor(2, 0, 0, 255);
+  strip.setPixelColor(3, 255, 255, 255);
+  strip.setPixelColor(4, 0, 0, 255);
 
 void turnOn(int numButton) {
   if (myWord == "blue") {
-    strip.setPixelColor (numButton, 0, 0, 255)
+    strip.setPixelColor(numButton, 0, 0, 255)
   }
 }
 
