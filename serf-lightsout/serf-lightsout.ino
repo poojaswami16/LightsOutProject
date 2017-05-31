@@ -45,10 +45,12 @@ if (myWord == "random") {
   strip.setPixelColor(2, 0, 0, 255);
   strip.setPixelColor(3, 255, 255, 255);
   strip.setPixelColor(4, 0, 0, 255);
+}
+}
 
 void turnOn(int numButton) {
   if (myWord == "blue") {
-    strip.setPixelColor(numButton, 0, 0, 255)
+    strip.setPixelColor(numButton, 0, 0, 255);
   }
 }
 
