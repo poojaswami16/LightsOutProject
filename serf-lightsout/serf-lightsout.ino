@@ -14,7 +14,8 @@
 
 int pin = 8;
 String myWord;
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(5, pin, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(5, pin, NEO_GRB + NEO_KHZ800); 
+boolean Lights[] = {true, false, false, true, false};
 
 void setup() {
   Wire.begin(8);                // join i2c bus with address #8
@@ -48,35 +49,52 @@ if (myWord == "random") {
 }
 }
 
-void turnOn(int numButton) {
-  if (myWord == "blue") {
-    strip.setPixelColor(numButton, 0, 0, 255);
-    if (numButton ==0) {
-    strip.setPixelColor(numButton, 0, 0, 255);
-    strip.setPixelColor(numButton+1,0, 0, 255);
+void flip(int numButton) {
+  if (Lights[numButton]) {
+    Lights[numButton] == false;
   }
-    if (numButton == 4) {
-      strip.setPixelColor(numButton-1,0, 0, 255);
-      strip.setPixelColor(numButton, 0, 0, 255);
+  else {
+    Lights[numButton] == true;
+  }
+  if (Lights[numButton-1]) {
+    Lights[numButton-1] == false;
+  }
+  else {
+    Lights[numButton-1] == true;
+  }
+  if (Lights[numButton+1]) {
+    Lights[numButton+1] == false;
+  }
+  else {
+    Lights[numButton+1] == true;
+  }
+  if (numButton == 0) {
+    if (Lights[numButton]) {
+      Lights[numButton] == false;
+    }
+    else {
+      Lights[numButton] == true;
+    }
+    if (Lights[numButton+1]) {
+      Lights[numButton+1] == false;
+    }
+    else {
+      Lights[numButton+1] == true;
+    }
+  }
+  if (numButton == 4) {
+    if (Lights[numButton]) {
+      Lights[numButton] == false;
+    }
+    else {
+      Lights[numButton] == true;
+    }
+    if (Lights[numButton-1]) {
+      Lights[numButton-1] == false;
+    }
+    else {
+    Lights[numButton-1] == true;
     }
   }
 }
-
-void turnOff(int numButton) {
-  if (myWord == "white") {
-    strip.setPixelColor(numButton, 255, 255, 255);
-    if(numButton == 0) {
-      strip.setPixelColor(numButton, 255, 255, 255);
-      strip.setPixelColor(numButton+1, 255, 255, 255);
-    }
-    if (numButton == 4) {
-      strip.setPixelColor(numButton-1, 255, 255, 255);
-      strip.setPixelColor(numButton, 255, 255, 255);
-    }
-  }
-}
-
-void flip() {
-  turnOn;
-  turnOff;
-}
+    
