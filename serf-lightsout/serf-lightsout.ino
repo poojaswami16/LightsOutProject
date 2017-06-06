@@ -27,10 +27,6 @@ void setup() {
   Serial.println("setup");
 }
 
-void loop() {
-  delay(100);
-}
-
 void receiveEvent(int howMany) {
   myWord = "";
   while (0 < Wire.available()) { // loop through all but the last
@@ -39,18 +35,17 @@ void receiveEvent(int howMany) {
   }
   Serial.println("hello");
   Serial.println(myWord);
+}
 
-if (myWord == "random") {
+void loop(int numButton) {
+  if (myWord == "random") {
   strip.setPixelColor(0, 255, 255, 255);
   strip.setPixelColor(1, 0, 0, 255);
   strip.setPixelColor(2, 0, 0, 255);
   strip.setPixelColor(3, 255, 255, 255);
   strip.setPixelColor(4, 0, 0, 255);
 }
-}
-
-void flip(int numButton) {
-  if (Lights[numButton]) {
+if (Lights[numButton]) {
     Lights[numButton] == false;
   }
   else {
