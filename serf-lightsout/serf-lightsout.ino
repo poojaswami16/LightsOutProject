@@ -1,14 +1,3 @@
-// Wire Slave Receiver
-// by Nicholas Zambetti <http://www.zambetti.com>
-
-// Demonstrates use of the Wire library
-// Receives data as an I2C/TWI slave device
-// Refer to the "Wire Master Writer" example for use with this
-
-// Created 29 March 2006
-
-// This example code is in the public domain.
-
 #include <Adafruit_NeoPixel.h>
 #include <Wire.h>
 
@@ -37,7 +26,7 @@ void receiveEvent(int howMany) {
   Serial.println(myWord);
 }
 
-void loop(int numButton) {
+void loop() {
   if (myWord == "random") {
   strip.setPixelColor(0, 255, 255, 255);
   strip.setPixelColor(1, 0, 0, 255);
@@ -45,6 +34,8 @@ void loop(int numButton) {
   strip.setPixelColor(3, 255, 255, 255);
   strip.setPixelColor(4, 0, 0, 255);
 }
+
+int numButton = myWord.toInt(); 
 if (Lights[numButton]) {
     Lights[numButton] == false;
   }
